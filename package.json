@@ -10,8 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@dnd-kit/core": "^6.3.1",
+    "@react-spring/web": "^9.7.5",
+    "bootstrap": "^5.3.5",
+    "leader-line": "^1.0.7",
+    "leader-line-new": "^1.1.9",
+    "react": "^18.3.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.3.1",
+    "react-flow-renderer": "^10.3.17",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
