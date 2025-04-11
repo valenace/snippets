@@ -3,6 +3,9 @@ import "./App.css";
 import ConnectTest from "./ConnectTest";
 import SentenceTest from "./SentenceTest";
 import "bootstrap/dist/css/bootstrap.min.css";
+import GameCanvas from "./GameCanvas";
+import PuzzleBoard from "./PuzzleBoard";
+import Puzzle from "./Puzzle";
 
 
 const App = () => {
@@ -13,6 +16,10 @@ const App = () => {
       <ConnectTest />
       <hr/>
       <SentenceTest />
+      <hr/>
+      <PuzzleBoard />
+      <hr/>
+      <Puzzle />
     </div>
   );
 };
