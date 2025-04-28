@@ -14,6 +14,8 @@ export default function ConnectTest() {
   const [connections, setConnections] = useState([]);
   const [isValidated, setIsValidated] = useState(false);
   const [score, setScore] = useState(0);
+  const titleRefs = useRef({});
+  const conceptRefs = useRef({});
   const linesRef = useRef([]);
 
   const handleTitleClick = (id) => {
@@ -33,10 +35,19 @@ export default function ConnectTest() {
   useEffect(() => {
     linesRef.current.forEach((line) => line.remove());
     linesRef.current = connections.map(({ title, concept }) => {
-      const titleEl = document.getElementById(`title-${title}`);
-      const conceptEl = document.getElementById(`concept-${concept}`);
+      const titleEl = titleRefs.current[title];
+      const conceptEl = conceptRefs.current[concept];
+      console.log(`Title Element (${title}):`, titleEl);
+      console.log(`Concept Element (${concept}):`, conceptEl);
       if (titleEl && conceptEl) {
-        return new LeaderLine(titleEl, conceptEl, { color: "white", path: "straight", size: 2 });
+        try {
+          const line = new LeaderLine(titleEl, conceptEl, { color: "aliceblue", path: "straight", size: 2 });
+          console.log("LeaderLine Instance:", line);
+          return line;
+        } catch (error) {
+          console.error("Error creating LeaderLine:", error);
+          return null;
+        }
       }
       return null;
     }).filter(line => line !== null);
@@ -66,6 +77,7 @@ export default function ConnectTest() {
             {items.map((item) => (
               <div
                 key={item.id}
+                ref={(el) => (titleRefs.current[item.id] = el)}
                 id={`title-${item.id}`}
                 className={`p-2 border bg-light rounded text-center text-dark shadow-sm cursor-pointer ${selectedTitle === item.id ? "bg-primary text-white" : ""}`}
                 onClick={() => handleTitleClick(item.id)}
@@ -81,6 +93,7 @@ export default function ConnectTest() {
             {items.map((item) => (
               <div
                 key={item.id}
+                ref={(el) => (conceptRefs.current[item.id] = el)}
                 id={`concept-${item.id}`}
                 className="p-3 border bg-white rounded d-flex align-items-center justify-content-center shadow-sm cursor-pointer"
                 onClick={() => handleConceptClick(item.id)}

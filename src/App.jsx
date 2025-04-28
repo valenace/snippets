@@ -9,8 +9,6 @@ import Puzzle from "./Puzzle";
 
 
 const App = () => {
-  const [currentView, setCurrentView] = useState("flow");
-
   return (
     <div className="app">
       <ConnectTest />
