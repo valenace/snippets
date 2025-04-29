@@ -8,12 +8,14 @@ import PuzzleBoard from "./PuzzleBoard";
 import Puzzle from "./Puzzle";
 import TestOpciones from "./TestOpciones";
 import TestValidacionIndv from "./TestOpcionesIndv";
+import ModuloDetalle from "./ModuloDetalle";
 
 
 const App = () => {
   return (
     <div className="app">
-      <ConnectTest />
+      <ModuloDetalle />
+      {/* <ConnectTest />
       <hr/>
       <TestOpciones />
       <hr/>
@@ -23,7 +25,7 @@ const App = () => {
       <hr/>
       <PuzzleBoard />
       <hr/>
-      <Puzzle />
+      <Puzzle /> */}
       
     </div>
   );

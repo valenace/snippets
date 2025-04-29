@@ -1,0 +1,47 @@
+{
+    "modulos": [
+      {
+        "id": 1,
+        "nombre": "Módulo Introductorio",
+        "submodulos": [
+          {
+            "id": 101,
+            "nombre": "Introducción al Curso",
+            "contenido": "Bienvenido al curso. En este submódulo aprenderás los fundamentos...",
+            "dinamicas": []
+          },
+          {
+            "id": 102,
+            "nombre": "Configuración del Entorno",
+            "contenido": "Antes de empezar a codificar, asegúrate de tener instalado...",
+            "dinamicas": [
+              {
+                "tipo": "pregunta_unica",
+                "componente": "MultipleChoiceTest",
+                "pregunta": "¿Cuál es la herramienta principal que utilizaremos?",
+                "opciones": ["Opción A", "Opción B", "Opción C", "Opción D"],
+                "respuestaCorrecta": "Opción B"
+              },
+              {
+                "tipo": "completar_espacio",
+                "componente": "FillInTheBlank",
+                "texto": "El lenguaje de programación principal es ____."
+              }
+            ]
+          },
+          {
+            "id": 103,
+            "nombre": "Primeros Pasos",
+            "contenido": "Ahora vamos a escribir nuestro primer código...",
+            "dinamicas": []
+          },
+          {
+            "id": 104,
+            "nombre": "Siguientes Pasos",
+            "contenido": "Lorem ksmdksma wsdjisoahd aidjsioajdisoajddd iodjsio",
+            "dinamicas": []
+          }
+        ]
+      }
+    ]
+  }
