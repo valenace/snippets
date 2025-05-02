@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+import ConnectTest from "./ConnectTest";
+import SentenceTest from "./SentenceTest";
+import GameCanvas from "./GameCanvas";
+import PuzzleBoard from "./PuzzleBoard";
+import Puzzle from "./Puzzle";
+import TestOpciones from "./TestOpciones";
+import TestValidacionIndv from "./TestOpcionesIndv";
+
 // Importa aquí los componentes de las dinámicas que vas a usar
 // Por ejemplo:
 // import MultipleChoiceTest from './components/MultipleChoiceTest';
@@ -9,6 +17,16 @@ function ModuloDetalle() {
   const [modulo, setModulo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const dynamicComponents = {
+    'ConnectTest' : ConnectTest,
+    'SentenceTest' : SentenceTest,
+    'GameCanvas' : GameCanvas,
+    'PuzzleBoard' : PuzzleBoard,
+    'Puzzle' : Puzzle,
+    'TestOpciones' : TestOpciones,
+    'TestValidacionIndv' : TestValidacionIndv,
+  };
 
   useEffect(() => {
     const fetchModulo = async () => {
@@ -30,18 +48,13 @@ function ModuloDetalle() {
   }, []);
 
   const renderDinamica = (dinamica) => {
-    switch (dinamica.componente) {
-      case 'MultipleChoiceTest':
-        // Asegúrate de pasar las props correctas a tu componente
-        // return <MultipleChoiceTest {...dinamica} />;
-        return <div>Componente MultipleChoiceTest (Implementar)</div>;
-      case 'FillInTheBlank':
-        // Asegúrate de pasar las props correctas a tu componente
-        // return <FillInTheBlank {...dinamica} />;
-        return <div>Componente FillInTheBlank (Implementar)</div>;
-      // Agrega más casos para otros tipos de dinámicas
-      default:
-        return null;
+    const DynamicComponent = dynamicComponents[dinamica.componente];
+
+    if (DynamicComponent) {
+      // Renderiza el componente dinámicamente pasándole todas las props de la 'dinamica'
+      return <DynamicComponent {...dinamica} />;
+    } else {
+      return <div>Componente dinámico no reconocido: {dinamica.componente}</div>;
     }
   };
 

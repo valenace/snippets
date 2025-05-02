@@ -7,7 +7,7 @@
           {
             "id": 101,
             "nombre": "Introducción al Curso",
-            "contenido": "Bienvenido al curso. En este submódulo aprenderás los fundamentos...",
+            "contenido": "Bienvenido al curso. En este submódulo aprenderás los fundamentos... \nksjdks",
             "dinamicas": []
           },
           {
@@ -33,7 +33,20 @@
             "id": 103,
             "nombre": "Primeros Pasos",
             "contenido": "Ahora vamos a escribir nuestro primer código...",
-            "dinamicas": []
+            "dinamicas": [
+              {
+                "tipo": "conectar_conceptos",
+                "componente": "ConnectTest",
+                "pregunta": "Conecta los títulos con sus conceptos correspondientes.",
+                "items": [
+                  { "id": "1", "title": "Fotosíntesis", "concept": "Proceso mediante el cual las plantas convierten..." },
+                  { "id": "2", "title": "Energía Cinética", "concept": "Energía asociada al movimiento de un objeto." },
+                  { "id": "3", "title": "Teoría de la Relatividad", "concept": "Propuesta por Albert Einstein, describe cómo..." },
+                  { "id": "4", "title": "Ciclo del Agua", "concept": "Proceso que describe cómo el agua circula entre..." },
+                  { "id": "5", "title": "ADN", "concept": "Molécula que contiene la información genética..." }
+                ]
+              }
+            ]
           },
           {
             "id": 104,

@@ -1,15 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import LeaderLine from "leader-line-new";
 
-const items = [
-  { id: "1", title: "Fotosíntesis", concept: "Proceso mediante el cual las plantas convierten..." },
-  { id: "2", title: "Energía Cinética", concept: "Energía asociada al movimiento de un objeto." },
-  { id: "3", title: "Teoría de la Relatividad", concept: "Propuesta por Albert Einstein, describe cómo..." },
-  { id: "4", title: "Ciclo del Agua", concept: "Proceso que describe cómo el agua circula entre..." },
-  { id: "5", title: "ADN", concept: "Molécula que contiene la información genética..." }
-];
-
-export default function ConnectTest() {
+function ConnectTest({ items }) { // Recibimos 'items' como prop
   const [selectedTitle, setSelectedTitle] = useState(null);
   const [connections, setConnections] = useState([]);
   const [isValidated, setIsValidated] = useState(false);
@@ -37,12 +29,9 @@ export default function ConnectTest() {
     linesRef.current = connections.map(({ title, concept }) => {
       const titleEl = titleRefs.current[title];
       const conceptEl = conceptRefs.current[concept];
-      console.log(`Title Element (${title}):`, titleEl);
-      console.log(`Concept Element (${concept}):`, conceptEl);
       if (titleEl && conceptEl) {
         try {
           const line = new LeaderLine(titleEl, conceptEl, { color: "aliceblue", path: "straight", size: 2 });
-          console.log("LeaderLine Instance:", line);
           return line;
         } catch (error) {
           console.error("Error creating LeaderLine:", error);
@@ -56,7 +45,13 @@ export default function ConnectTest() {
   const validateAnswers = () => {
     let correct = 0;
     connections.forEach((conn) => {
-      if (conn.title === conn.concept) correct++;
+      // Asumimos que la conexión correcta es cuando el title.id === concept.id
+      // Si tu lógica es diferente, ajústala aquí.
+      const titleItem = items.find(item => item.id === conn.title);
+      const conceptItem = items.find(item => item.id === conn.concept);
+      if (titleItem && conceptItem && titleItem.id === conceptItem.id) {
+        correct++;
+      }
     });
     setScore(correct);
     setIsValidated(true);
@@ -112,3 +107,5 @@ export default function ConnectTest() {
     </div>
   );
 }
+
+export default ConnectTest;
