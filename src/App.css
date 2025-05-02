@@ -273,3 +273,141 @@
 #reset-button:hover {
   background-color: #0056b3;
 }
+.con-saltos-de-linea {
+  white-space: pre-wrap;
+}
+
+
+
+/* ############# */
+
+
+.course-sidebar {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px; /* Ajusta el ancho según sea necesario */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.completion-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.completion-status span {
+  color: #555;
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  height: 8px;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.progress {
+  background-color: #007bff; /* Color primario */
+  height: 100%;
+  border-radius: 5px;
+}
+
+.calendar-button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #555;
+}
+
+.module-item {
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.module-header {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.module-info {
+  flex-grow: 1;
+}
+
+.module-name {
+  color: #333;
+  font-weight: bold;
+}
+
+.module-details {
+  color: #777;
+  font-size: 0.85em;
+}
+
+.module-details span {
+  margin-right: 10px;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  color: #555;
+}
+
+.submodule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+.submodule-item {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.submodule-name {
+  flex-grow: 1;
+}
+
+.submodule-duration {
+  margin-left: 10px;
+}
+
+.submodule-locked {
+  color: red;
+  margin-left: 10px;
+}
+
+/* Estilos para los iconos (puedes usar una librería de iconos como Font Awesome) */
+.icon-clock::before {
+  content: "⏱️"; /* Ejemplo de icono Unicode */
+  margin-right: 5px;
+}
+
+.icon-book::before {
+  content: "📚"; /* Ejemplo de icono Unicode */
+  margin-right: 5px;
+}

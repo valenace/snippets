@@ -9,11 +9,13 @@ import Puzzle from "./Puzzle";
 import TestOpciones from "./TestOpciones";
 import TestValidacionIndv from "./TestOpcionesIndv";
 import ModuloDetalle from "./ModuloDetalle";
+import CourseSidebar from "./CourseSidebar";
 
 
 const App = () => {
   return (
     <div className="app">
+      <CourseSidebar />
       <ModuloDetalle />
       {/* <ConnectTest />
       <hr/>
