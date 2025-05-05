@@ -5,15 +5,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/js/bootstrap.min'; // Importa el JS de Bootstrap (depende de Popper)
 import '@popperjs/core';
 
-import ConnectTest from "./ConnectTest";
-import SentenceTest from "./SentenceTest";
-import GameCanvas from "./GameCanvas";
-import PuzzleBoard from "./PuzzleBoard";
-import Puzzle from "./Puzzle";
-import TestOpciones from "./TestOpciones";
-import TestValidacionIndv from "./TestOpcionesIndv";
-import ModuloDetalle from "./ModuloDetalle";
-import CourseSidebar from "./CourseSidebar";
+import ConnectTest from "./components/ConnectTest";
+import SentenceTest from "./components/SentenceTest";
+import GameCanvas from "./components/GameCanvas";
+import PuzzleBoard from "./components/PuzzleBoard";
+import Puzzle from "./components/Puzzle";
+import TestOpciones from "./components/TestOpciones";
+import TestValidacionIndv from "./components/TestOpcionesIndv";
+import ModuloDetalle from "./components/ModuloDetalle";
+import CourseSidebar from "./components/CourseSidebar";
 import HorizontalTimeline from "./components/HorizontalTimeline";
 
 const timelineEvents = [
