@@ -1,0 +1,79 @@
+{
+    "nombre_curso": "Curso IA",
+    "modulos": [
+      {
+        "id": 1,
+        "titulo": "Introducción del Curso"
+      },
+      {
+        "id": 2,
+        "titulo": "¿Qué es la Inteligencia Artificial?",
+        "submodulos": [
+          {
+            "id": "2.1",
+            "titulo": "Introducción a la IA",
+            "submodulos": [
+              {
+                "id": "2.1.1",
+                "titulo": "Componente"
+              }
+            ]
+          },
+          {
+            "id": "2.2",
+            "titulo": "Historia y evolución",
+            "submodulos": [
+              {
+                "id": "2.2.1",
+                "titulo": "Componente"
+              }
+            ]
+          },
+          {
+            "id": "2.3",
+            "titulo": "Tipos de IA",
+            "submodulos": [
+              {
+                "id": "2.3.1",
+                "titulo": "IA Estrecha o Débil",
+                "submodulos": [
+                  {
+                    "id": "2.3.1.3",
+                    "titulo": "Componente"
+                  }
+                ]
+              },
+              {
+                "id": "2.3.2",
+                "titulo": "IA General"
+              }
+            ]
+          },
+          {
+            "id": "2.4",
+            "titulo": "¿De qué está hecha la IA?",
+            "submodulos": [
+              {
+                "id": "2.4.1",
+                "titulo": "Componente"
+              }
+            ]
+          },
+          {
+            "id": "2.5",
+            "titulo": "Aplicaciones de la IA en la vida diaria"
+          },
+          {
+            "id": "2.6",
+            "titulo": "Qué es y que no es IA",
+            "submodulos": [
+              {
+                "id": "2.6.1",
+                "titulo": "Componente"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
