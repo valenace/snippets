@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	background-color: #fff;
+	/*background-image: url(/home/user/Desktop/PLATAFORMA-CURSOS/sidevar.png);*/
+}
+.wrapper .sidebar{
+	background: #04314b;
+	/*background-image: url(/home/user/Desktop/PLATAFORMA-CURSOS/sidevar.png);*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 220px;
+	height: 100%;
+	padding: 1rem;
+	transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+	margin: 0 auto;
+}
+.wrapper .sidebar .profile h3{
+	color: #ffffff;
+	margin: 30px 0 5px;
+}
+.wrapper .sidebar ul li a{
+	display: block;
+	padding: 15px 40px;
+	color: rgb(241, 237, 237);
+	font-size: 12px;
+	position: relative;
+}
+.wrapper .sidebar ul li a .icon{
+	color: #fff;
+    font-size: 15px;
+	width: 30px;
+	display: inline-block;
+    gap: 100px;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+	color: #fff;
+	background: #97c4e26e;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+	color: #04314b;
+}
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+	display: block;
+}
+.wrapper .section{
+	width: calc(100% - 225px);
+	/* margin-left: 225px; */
+	transition: all 0.5s ease;
+}
+.wrapper .section .top_navbar{
+	background: #04314b;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+}
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: #f4fbff;
+}
+body.active .wrapper .sidebar{
+	left: -225px;
+}
+body.active .wrapper .section{
+	margin-left: 0;
+	width: 100%;
+}
+/* Tabla de bienvenida */
+.tabular--wrapper {
+    margin-top: 0.1rem;
+    border-radius: 10px;
+    padding: 3rem;
+    padding-top: 5px;
+}
+.table-container {
+    width: 183vh;
+    height: 200px;
+    margin-left: 178px;
+    overflow: auto;
+    overflow: overlay;
+    padding: 40px 50px;
+}
+.table-container::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.table-container::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+.table-container:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background: #eb2806;
+    color: #ffffff;
+}
+th {
+    padding: 10px;
+    text-align: left;
+    font-size: 10px;
+}
+tbody {
+    background: #f2f2f2;
+}
+td {
+    padding: 10px;
+    font-size: 10px;
+    color: rgb(0, 0, 0);
+}
+tr:nth-child(even) {
+    background: #c8c9ca;
+}
+th, td {
+    text-align: center;
+}
+.table-container{
+    background-color: #fff;
+}
+/*.swiper-slide{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;
+}*/
+.card-content{
+    width: 300px;
+    height: 350px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border-radius: 8px;*/
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);   
+    margin-left: 230px;
+}
+.card-content img{
+	width: 300px;
+	height: 170px;
+    margin-top: -4px;
+	/*border: 5px solid #04314b;*/
+	/*border-radius: 10px;*/
+}
+.name-profession p{
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	padding: 15px;
+}
+.aboutMe{
+	width: 100px;
+	height: 30px;
+	background-color: #04314b;
+	border-radius: 8px;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	color: #fff;
+}
+.aboutMe:hover{
+	background-color: #fff;
+	border: 2px solid #04314b;
+	color: #04314b;
+}
+.barra-progreso {
+    width: 90%;
+    height: 5px;
+    background-color: #d6d6d6;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.progreso {
+    width: 10%;
+    height: 100%;
+    background-color: #04314b;
+    border-radius: 10px;
+}
+.porcentaje {
+    margin-bottom: 5px;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+p .barra-progreso{
+	display: flex;
+	text-align: right;
+	color: #eb2806;
+}
+/*.card-list .card-item .title {
+    font-size: 30px;
+    color: #1c6d7e;
+    font-weight: bold;
+    margin: 14px 0 40px;
+    text-align: justify;
+} 
+.card-list .card-item .concept {
+    font-size: 15px;
+    color: #4b4b4b;
+    font-weight: 500;
+    margin: 14px 0 40px;
+    text-align: justify;
+}
+.card-list .card-item .message-button {
+    font-size: 14px;
+    padding: 8px 22px;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #1c6d7e;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+.card-list .card-item .message-button:hover {
+    background: #0d3a42;
+}
+.card-list .media-icons{
+    position: absolute;
+    line-height: 2px;
+    top: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.card-list .media-icons i{
+    color: #fd9e10;
+    opacity: 0.6;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+}
+.card-list .media-icons i:hover{
+    opacity: 3;
+}*/
+.top_navbar img{
+    height: 40px;
+    width: 100px;
+    margin-left: 45%;
+}

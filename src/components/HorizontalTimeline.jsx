@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Timeline } from "react-responsive-timeline";
-import "../../assets/timeline.css";
+import "../../assets/css/timeline.css";
 
 const HorizontalTimeline = ({ timelines }) => {
   const timelineRef = useRef(null);
