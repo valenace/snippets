@@ -17,13 +17,15 @@
     "framer-motion": "^12.6.3",
     "leader-line-new": "^1.1.9",
     "phaser": "^3.88.2",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-chrono": "^2.6.1",
+    "react-chrono": "^2.7.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
     "react-flow-renderer": "^10.3.17",
     "react-responsive-timeline": "^0.1.5",
+    "react-router": "^7.5.3",
     "reactflow": "^11.11.4"
   },
   "devDependencies": {
