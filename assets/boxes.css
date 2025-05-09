@@ -1,0 +1,124 @@
+:root {
+    /* --color1: #324d81; */
+    --color1: #005b9b;
+    --color2: #005b51;
+    --color3: #01b3a4;
+    /* --color4: #773555; */
+    --color4: #47386d;
+}
+:root {
+    /* --color1: #324d81; */
+    --color1: #005a9ba8;
+    --color2: #005b50bb;
+    --color3: #01b3a4ab;
+    /* --color4: #773555; */
+    --color4: #47386dab;
+}
+.serviceBox{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    height: 340px;
+    min-height: fit-content;
+    padding: 0 20px 60px;
+    margin: 5px 0 0 5px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+.serviceBox:before{
+    content: '';
+    background-color: #fff;
+    border-bottom: 30px solid #324d81;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    bottom: 0;
+    z-index: -1;
+}
+.serviceBox .service-icon{
+    color: #324d81;
+    background-color: #324d81;
+    font-size: 35px;
+    text-align: center;
+    height: 74px;
+    width: 160px;
+    padding: 7px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    position: relative;
+}
+.serviceBox .service-icon:before{
+    content: '';
+    background-color: #324d81;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 40%;
+    bottom: -10px;
+}
+.serviceBox .service-icon span{
+    background-color: #fff;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+.serviceBox .title{
+    color: #324d81;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+.serviceBox .description{
+    color: #999;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+}
+.serviceBox.magenta:before{ border-color: #773555; }
+.serviceBox.magenta .service-icon,
+.serviceBox.magenta .service-icon:before{
+    color: #773555;
+    background-color: #773555;
+}
+.serviceBox.magenta .title{ color: #773555; }
+
+.btn{
+    border-radius: 2rem;
+}
+
+
+.btn-color1{
+    color: #fff;
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+
+.btn-color2{
+    color: #fff;
+    background-color: var(--color2);
+    border-color: var(--color2);
+}
+
+.btn-color3{
+    color: #fff;
+    background-color: var(--color3);
+    border-color: var(--color3);
+}
+
+.btn-color4{
+    color: #fff;
+    background-color: var(--color4);
+    border-color: var(--color4);
+}
+
