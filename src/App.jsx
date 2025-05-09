@@ -4,6 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/js/bootstrap.min'; // Importa el JS de Bootstrap (depende de Popper)
 import '@popperjs/core';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import ConnectTest from "./components/ConnectTest";
 import SentenceTest from "./components/SentenceTest";
@@ -18,8 +23,9 @@ import HorizontalTimeline from "./components/HorizontalTimeline";
 import Timeline from "./components/Timeline";
 const App = () => {
   return (
-    
-    <Timeline />
+    <>
+      <Timeline />
+    </>   
     
       
   );

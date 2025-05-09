@@ -13,12 +13,13 @@
     "@dnd-kit/core": "^6.3.1",
     "@popperjs/core": "^2.11.8",
     "@react-spring/web": "^9.7.5",
-    "bootstrap": "^5.3.5",
-    "framer-motion": "^12.6.3",
+    "bootstrap": "^5.3.6",
+    "framer-motion": "^12.10.0",
     "leader-line-new": "^1.1.9",
     "phaser": "^3.88.2",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.9",
     "react-chrono": "^2.7.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
@@ -26,7 +27,9 @@
     "react-flow-renderer": "^10.3.17",
     "react-responsive-timeline": "^0.1.5",
     "react-router": "^7.5.3",
-    "reactflow": "^11.11.4"
+    "react-slick": "^0.30.3",
+    "reactflow": "^11.11.4",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
