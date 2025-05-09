@@ -1,9 +1,9 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
 .logo {
   height: 6em;
@@ -411,3 +411,70 @@
   content: "📚"; /* Ejemplo de icono Unicode */
   margin-right: 5px;
 }
+
+
+
+
+/* #___________________________# */
+
+import { useState } from "react";
+import "./Timeline.css"; // Asegúrate de crear este archivo para los estilos
+
+const items = [
+  { id: 1, titulo: "Evento 1", fecha: "10/01/2025", descripcion: "Breve descripción 1", detalle: "Descripción más larga del evento 1." },
+  { id: 2, titulo: "Evento 2", fecha: "15/02/2025", descripcion: "Breve descripción 2", detalle: "Descripción más larga del evento 2." },
+  { id: 3, titulo: "Evento 3", fecha: "20/03/2025", descripcion: "Breve descripción 3", detalle: "Descripción más larga del evento 3." },
+  { id: 4, titulo: "Evento 4", fecha: "25/04/2025", descripcion: "Breve descripción 4", detalle: "Descripción más larga del evento 4." },
+  { id: 5, titulo: "Evento 5", fecha: "30/05/2025", descripcion: "Breve descripción 5", detalle: "Descripción más larga del evento 5." },
+  { id: 6, titulo: "Evento 6", fecha: "05/06/2025", descripcion: "Breve descripción 6", detalle: "Descripción más larga del evento 6." },
+  { id: 7, titulo: "Evento 7", fecha: "10/07/2025", descripcion: "Breve descripción 7", detalle: "Descripción más larga del evento 7." },
+  { id: 8, titulo: "Evento 8", fecha: "15/08/2025", descripcion: "Breve descripción 8", detalle: "Descripción más larga del evento 8." }
+];
+
+const Timeline = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleNext = () => {
+    if (currentIndex + 4 < items.length) setCurrentIndex(currentIndex + 4);
+  };
+
+  const handlePrev = () => {
+    if (currentIndex - 4 >= 0) setCurrentIndex(currentIndex - 4);
+  };
+
+  const handleShowDetail = (item) => {
+    setSelectedItem(item);
+  };
+
+  return (
+    <div className="timeline-container">
+      <div className="timeline">
+        {items.slice(currentIndex, currentIndex + 4).map((item) => (
+          <div key={item.id} className="timeline-item" onClick={() => handleShowDetail(item)}>
+            <h3>{item.titulo}</h3>
+            <p>{item.fecha}</p>
+            <p>{item.descripcion}</p>
+          </div>
+        ))}
+      </div>
+      <div className="controls">
+        <button onClick={handlePrev} disabled={currentIndex === 0}>Anterior</button>
+        <button onClick={handleNext} disabled={currentIndex + 4 >= items.length}>Siguiente</button>
+      </div>
+
+      {selectedItem && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>{selectedItem.titulo}</h2>
+            <p><strong>Fecha:</strong> {selectedItem.fecha}</p>
+            <p>{selectedItem.detalle}</p>
+            <button onClick={() => setSelectedItem(null)}>Cerrar</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Timeline;
