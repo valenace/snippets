@@ -40,3 +40,44 @@
 .read-the-docs {
   color: #888;
 }
+.app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .puzzle-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 5px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .cell.filled {
+    background-color: #e0f7fa;
+  }
+  
+  .puzzle-piece {
+    cursor: grab;
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+  }
+  
+  .puzzle-piece:hover {
+    border-color: #0056b3;
+  }

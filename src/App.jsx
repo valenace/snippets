@@ -3,6 +3,7 @@ import "./App.css";
 import ConnectTest from "./ConnectTest";
 import SentenceTest from "./SentenceTest";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PuzzleGame from "./PuzzleGame";
 
 
 const App = () => {
@@ -10,9 +11,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <ConnectTest />
-      <hr/>
-      <SentenceTest />
+        <PuzzleGame />
+        <hr/>
+        <ConnectTest />
+        <hr/>
+        <SentenceTest />
     </div>
   );
 };
