@@ -3,16 +3,33 @@
     "modulos": [
       {
         "id": 1,
-        "titulo": "Introducción del Curso"
-      },
+        "titulo": "Introducción del Curso",
+        "contenido": "En este curso te ofrecemos una introducción completa al fascinante mundo de la Inteligencia Artificial (IA), comenzando por definiciones y un breve recorrido histórico que abarca desde sus inicios hasta avances recientes en Machine Learning y Deep Learning. Al completar este curso, podrás: Comprender la definición de IA, sus raíces históricas desde los años 30, y las diferentes clasificaciones según su capacidad, como la IA débil y la IA general. Te introducirás en el Machine Learning, un subcampo de la IA, entendiendo cómo las máquinas pueden aprender de los datos sin ser programadas explícitamente y conocerás los cuatro tipos principales de aprendizaje y los tipos de problemas. Descubrirás qué es el Deep Learning, su base en las Redes Neuronales Artificiales y la estructura básica de estas. Asimismo, entenderás el proceso de entrenamiento, evaluación e inferencia de estos modelos. Finalmente, abordaras los principios éticos cruciales para el desarrollo y uso responsable de la IA. En resumen, este curso te proporcionará una base sólida y comprensiva en Inteligencia Artificial, preparándote para entender su impacto actual y futuro, así como los desafíos éticos que plantea.",
+        "submodulos": ""
+      },      
       {
         "id": 2,
         "titulo": "¿Qué es la Inteligencia Artificial?",
+        "contenido":"",
         "submodulos": [
           {
             "id": "2.1",
             "titulo": "Introducción a la IA",
-            "submodulos": [
+            "puntos": [
+              {
+                "id": "2.1.1",
+                "titulo": "Definicion",
+                "contenido": "Dar una definición exacta de Inteligencia artificial es sumamente difícil,debido a su complejidad y a su constante innovación, existen diferentes definiciones de diversos autores.",
+                "dinamicas": [
+                  {
+                    "tipo": "pregunta_unica",
+                    "componente": "MultipleChoiceTest",
+                    "pregunta": "¿Cuál es la herramienta principal que utilizaremos?",
+                    "opciones": ["Opción A", "Opción B", "Opción C", "Opción D"],
+                    "respuestaCorrecta": "Opción B"
+                  }
+                ]
+              },
               {
                 "id": "2.1.1",
                 "titulo": "Componente"
@@ -22,7 +39,7 @@
           {
             "id": "2.2",
             "titulo": "Historia y evolución",
-            "submodulos": [
+            "puntos": [
               {
                 "id": "2.2.1",
                 "titulo": "Componente"
@@ -32,11 +49,11 @@
           {
             "id": "2.3",
             "titulo": "Tipos de IA",
-            "submodulos": [
+            "puntos": [
               {
                 "id": "2.3.1",
                 "titulo": "IA Estrecha o Débil",
-                "submodulos": [
+                "subpuntos": [
                   {
                     "id": "2.3.1.3",
                     "titulo": "Componente"
@@ -52,7 +69,7 @@
           {
             "id": "2.4",
             "titulo": "¿De qué está hecha la IA?",
-            "submodulos": [
+            "puntos": [
               {
                 "id": "2.4.1",
                 "titulo": "Componente"
@@ -66,7 +83,7 @@
           {
             "id": "2.6",
             "titulo": "Qué es y que no es IA",
-            "submodulos": [
+            "puntos": [
               {
                 "id": "2.6.1",
                 "titulo": "Componente"
