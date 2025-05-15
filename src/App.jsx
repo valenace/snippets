@@ -1,4 +1,5 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '../assets/css/curso.css'
 import '../assets/css/inicio.css'
 import '../assets/css/login.css'
@@ -14,15 +15,12 @@ import CursoIA from './components/CursoIA'
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/cursos" element={<CoursePage />} />
-    //   </Routes>
-    // </BrowserRouter>
-    <div>
-      <CursoIA />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cursos" element={<CoursePage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 export default App
