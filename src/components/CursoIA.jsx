@@ -1,25 +1,35 @@
-// src/components/CursoIA.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import datosCurso from "../../api/curso.json";
 
+// Objeto para mapear nombres de componentes a sus respectivas importaciones
+const componentesDisponibles = {
+  // ComponenteA: lazy(() => import("../componentes/ComponenteA")),
+  // ComponenteB: lazy(() => import("../componentes/ComponenteB")),
+  Puzzle: lazy(() => import("../components/Puzzle")),
+};
 
 const CursoIA = () => {
   const [todosLosSlides, setTodosLosSlides] = useState([]);
   const [indiceActual, setIndiceActual] = useState(0);
   const [porcentajeProgreso, setPorcentajeProgreso] = useState(0);
 
-  // Extraer todos los submodulos como slides
   useEffect(() => {
-    const obtenerSlides = (modulo) => {
+    const obtenerSlides = (modulos) => {
       let resultados = [];
 
-      modulo.modulos.forEach((mod) => {
-        if (mod.submodulos) {
-          mod.submodulos.forEach((submod) => {
-            resultados.push({
-              moduloTitulo: mod.titulo,
-              slide: submod,
-            });
+      modulos.forEach((modulo) => {
+        if (modulo.submodulos) {
+          modulo.submodulos.forEach((submodulo) => {
+            if (submodulo.puntos) {
+              submodulo.puntos.forEach((punto) => {
+                resultados.push({
+                  moduloTitulo: modulo.titulo,
+                  submoduloTitulo: submodulo.titulo,
+                  puntoTitulo: punto.titulo,
+                  dinamicas: punto.dinamicas || [],
+                });
+              });
+            }
           });
         }
       });
@@ -27,10 +37,9 @@ const CursoIA = () => {
       return resultados;
     };
 
-    const listaSlides = obtenerSlides(datosCurso);
+    const listaSlides = obtenerSlides(datosCurso.modulos);
     setTodosLosSlides(listaSlides);
 
-    // Cargar avance guardado
     const avanceGuardado = localStorage.getItem("avanceCursoIA");
     if (avanceGuardado !== null) {
       const indice = parseInt(avanceGuardado);
@@ -40,7 +49,6 @@ const CursoIA = () => {
     }
   }, []);
 
-  // Actualizar progreso y guardar avance
   useEffect(() => {
     if (todosLosSlides.length > 0) {
       const porcentaje = ((indiceActual + 1) / todosLosSlides.length) * 100;
@@ -65,44 +73,35 @@ const CursoIA = () => {
     return <div>Cargando contenido...</div>;
   }
 
-  const { moduloTitulo, slide } = todosLosSlides[indiceActual];
+  const { moduloTitulo, submoduloTitulo, puntoTitulo, dinamicas } = todosLosSlides[indiceActual];
 
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>{datosCurso.nombre_curso}</h1>
 
-      {/* Títulos */}
       <div style={styles.card}>
         <h3 style={styles.moduleTitle}>Módulo: {moduloTitulo}</h3>
-        <h2 style={styles.slideTitle}>Submódulo: {slide.titulo}</h2>
-        <p>ID: {slide.id}</p>
+        <h2 style={styles.slideTitle}>Submódulo: {submoduloTitulo}</h2>
+        <h4 style={styles.puntoTitle}>Punto: {puntoTitulo}</h4>
       </div>
 
-      {/* Contenido de puntos */}
       <div style={styles.contentContainer}>
-        <h4 style={styles.sectionTitle}>Contenido:</h4>
-        <ul style={styles.lista}>
-          {slide.puntos?.map((punto, idx) => (
-            <li key={idx} style={styles.listaItem}>
-              {punto.titulo}
-              {punto.subpuntos && punto.subpuntos.length > 0 && (
-                <ul style={styles.listaSubitems}>
-                  {punto.subpuntos.map((sp, i) => (
-                    <li key={i} style={styles.listaSubitem}>
-                      {sp.titulo}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
+        <h4 style={styles.sectionTitle}>Dinamicas:</h4>
+        <Suspense fallback={<p>Cargando dinámicas...</p>}>
+          {dinamicas.map((dinamica, idx) => {
+            const ComponenteDinamico = componentesDisponibles[dinamica.componente];
+            return ComponenteDinamico ? (
+              <ComponenteDinamico key={idx} datos={dinamica.contenido} />
+            ) : (
+              <p key={idx}>Componente "{dinamica.componente}" no encontrado.</p>
+            );
+          })}
+        </Suspense>
       </div>
 
-      {/* Barra de progreso */}
       <div style={styles.progressContainer}>
         <p style={styles.progressText}>
-          Submódulo {indiceActual + 1} de {todosLosSlides.length}
+          Slide {indiceActual + 1} de {todosLosSlides.length}
         </p>
         <div style={styles.progressBarBackground}>
           <div
@@ -114,29 +113,11 @@ const CursoIA = () => {
         </div>
       </div>
 
-      {/* Botones */}
       <div style={styles.buttonContainer}>
-        <button
-          onClick={anteriorSlide}
-          disabled={indiceActual === 0}
-          style={{
-            ...styles.button,
-            backgroundColor: indiceActual === 0 ? "#ccc" : "#2196f3",
-          }}
-        >
+        <button onClick={anteriorSlide} disabled={indiceActual === 0} style={{ ...styles.button, backgroundColor: indiceActual === 0 ? "#ccc" : "#2196f3" }}>
           Anterior
         </button>
-        <button
-          onClick={siguienteSlide}
-          disabled={indiceActual === todosLosSlides.length - 1}
-          style={{
-            ...styles.button,
-            backgroundColor:
-              indiceActual === todosLosSlides.length - 1
-                ? "#ccc"
-                : "#4caf50",
-          }}
-        >
+        <button onClick={siguienteSlide} disabled={indiceActual === todosLosSlides.length - 1} style={{ ...styles.button, backgroundColor: indiceActual === todosLosSlides.length - 1 ? "#ccc" : "#4caf50" }}>
           Siguiente
         </button>
       </div>

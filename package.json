@@ -23,7 +23,7 @@
     "react-dom": "^18.3.1",
     "react-responsive-timeline": "^0.1.5",
     "react-router": "^7.6.0",
-    "react-router-dom": "^7.5.3",
+    "react-router-dom": "^7.6.0",
     "reactflow": "^11.11.4",
     "swiper": "^11.2.6"
   },

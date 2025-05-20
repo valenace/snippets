@@ -1,60 +1,327 @@
 {
-    "modulos": [
-      {
-        "id": 1,
-        "nombre": "Módulo Introductorio",
-        "submodulos": [
-          {
-            "id": 101,
-            "nombre": "Introducción al Curso",
-            "contenido": "Bienvenido al curso. En este submódulo aprenderás los fundamentos... \nksjdks",
-            "dinamicas": []
-          },
-          {
-            "id": 102,
-            "nombre": "Configuración del Entorno",
-            "contenido": "Antes de empezar a codificar, asegúrate de tener instalado...",
-            "dinamicas": [
-              {
-                "tipo": "pregunta_unica",
-                "componente": "MultipleChoiceTest",
-                "pregunta": "¿Cuál es la herramienta principal que utilizaremos?",
-                "opciones": ["Opción A", "Opción B", "Opción C", "Opción D"],
-                "respuestaCorrecta": "Opción B"
-              },
-              {
-                "tipo": "completar_espacio",
-                "componente": "FillInTheBlank",
-                "texto": "El lenguaje de programación principal es ____."
-              }
-            ]
-          },
-          {
-            "id": 103,
-            "nombre": "Primeros Pasos",
-            "contenido": "Ahora vamos a escribir nuestro primer código...",
-            "dinamicas": [
-              {
-                "tipo": "conectar_conceptos",
-                "componente": "ConnectTest",
-                "pregunta": "Conecta los títulos con sus conceptos correspondientes.",
-                "items": [
-                  { "id": "1", "title": "Fotosíntesis", "concept": "Proceso mediante el cual las plantas convierten..." },
-                  { "id": "2", "title": "Energía Cinética", "concept": "Energía asociada al movimiento de un objeto." },
-                  { "id": "3", "title": "Teoría de la Relatividad", "concept": "Propuesta por Albert Einstein, describe cómo..." },
-                  { "id": "4", "title": "Ciclo del Agua", "concept": "Proceso que describe cómo el agua circula entre..." },
-                  { "id": "5", "title": "ADN", "concept": "Molécula que contiene la información genética..." }
-                ]
-              }
-            ]
-          },
-          {
-            "id": 104,
-            "nombre": "Siguientes Pasos",
-            "contenido": "Lorem ksmdksma wsdjisoahd aidjsioajdisoajddd iodjsio",
-            "dinamicas": []
-          }
-        ]
-      }
-    ]
-  }
+  "nombre_curso": "...",
+  "modulos": [
+    {
+      "id": 1,
+      "titulo": "...",
+      "contenido": "...",
+      "submodulos": "..."
+    },      
+    {
+      "id": 2,
+      "titulo": "...",
+      "contenido":"",
+      "submodulos": [
+        {
+          "id": "...",
+          "titulo": "...",
+          "puntos": [
+            {
+              "id": "...",
+              "titulo": "...",
+              "contenido": "...",
+              "dinamicas": [
+                {                    
+                  "componente": "...",
+                  "contenido": "...."
+                },
+                {                    
+                  "componente": "...",
+                  "contenido": [
+                    "”La IA es la capacidad de las máquinas para usar algoritmos, aprender de los datos y utilizar lo aprendido en la toma de decisiones tal y como lo haría un ser humano.” \n Lasse Rouhiainen.",
+                    "“La IA es una rama de las ciencias computacionales encargada de estudiar modelos de cómputo capaces de realizar actividades propias de los seres humanos en base a dos de sus características primordiales: el razonamiento y la conducta” \n Bruno López Takeyas.",
+                    "“El estudio y desarrollo de sistemas informáticos que pueden copiar el comportamiento humano inteligente” \nDiccionario de Oxford",
+                    "“Un sistema de IA es un sistema digital que procesa y analiza información en su entorno para actuar sobre él - con cierto grado de autonomía- con el fin de alcanzar objetivos específicos” \nUNESCO"
+                  ]                    
+                },
+                {                    
+                  "componente": "...",
+                  "contenido": "...."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "...",
+          "titulo": "...",
+          "contenido": "...",
+          "puntos": [
+            {
+              "id": "...",
+              "titulo": "...",
+              "contenido": "...",  
+              "dinamicas": [
+                {
+                  "componente": "...",
+                  "contenido": [
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...7"
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "fecha": "...",
+                      "descripcionCorta": "...",
+                      "descripcionLarga": "...."
+                    }
+                  ]
+                }                  
+              ]
+            }
+          ]
+        },
+        {
+          "id": "...",
+          "titulo": "...",
+          "contenido": "...",
+          "puntos": [
+            {
+              "id": "...",
+              "titulo": "...",
+              "contenido": "...",
+              "dinamicas": [
+                {
+                  "componente": "...",
+                  "contenido": [
+                    {
+                      "titulo": "...",
+                      "descipcion": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "descipcion": "...."
+                    },
+                    {
+                      "titulo": "...",
+                      "descipcion": "...."
+                    }
+                  ]
+                },
+                {
+                  "componente": "...",
+                  "contenido":  [
+                    {
+                      "initialWords": [
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": 5,
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        },
+                        {
+                          "id": "...",
+                          "text": "...",
+                          "color": "...",
+                          "container": "...e"
+                        }
+                      ]
+                    },
+                    {
+                      "correctAnswers": [
+                        {
+                          "box1": [1, 2, 3],
+                          "box2": [4, 5, 6, 7, 8]
+                        }
+                      ]
+                    }
+                  ]
+                }                  
+              ]
+            }
+          ]
+        },
+        {
+          "id": "...",
+          "titulo": "...",
+          "contenido": "...",
+          "puntos": [
+            {
+              "id": "...",
+              "titulo": "...",
+              "contenido": "...",
+              "dinamicas": [
+                {
+                  "componente": "...",
+                  "contenido": [
+                    {
+                      "pieces":
+                      [
+                        {
+                          "id": 1,
+                          "titulo": "...",
+                          "descripcion": "...s"
+                        },
+                        {
+                          "id": 2,
+                          "titulo": "...",
+                          "descripcion": "...."
+                        },
+                        {
+                          "id": 3,
+                          "titulo": "...",
+                          "descripcion": "...."
+                        },
+                        {
+                          "id": 4,
+                          "titulo": "...",
+                          "descripcion": "...E"
+                        },
+                        {
+                          "id": 5,
+                          "titulo": "...",
+                          "descripcion": "...."
+                        },
+                        {
+                          "id": 6,
+                          "titulo": "...",
+                          "descripcion": "...."
+                        }
+                      ]
+                    }
+                    
+
+                  ]
+                }                  
+              ]
+            }
+          ]
+        },
+        {
+          "id": "...",
+          "titulo": "...",
+          "contenido": "...."
+        },
+        {
+          "id": "...",
+          "titulo": "...",
+          "contenido": "...",
+          "puntos": [
+            {
+              "id": "...",
+              "titulo": "...",
+              "contenido": "...",
+              "dinamicas": [
+                {
+                  "componente": "...",
+                  "contenido": [
+                    {
+                      "preguntasConRespuestas":[
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...1"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...2"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...1"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...2"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...2"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...2"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...1"
+                        },
+                        {
+                          "pregunta": "...",
+                          "respuestaCorrecta": "...2"
+                        }
+                      ]
+                    }
+                  ]
+                }                  
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
