@@ -1,0 +1,35 @@
+/* Estilo del contenedor principal */
+.container-scrolling-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Estilo de cada bloque de contenido */
+  .item-scrolling-text {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Efecto de desplazamiento hacia abajo */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  /* Animación de entrada suave */
+  .item-scrolling-text.fade-in {
+    opacity: 1; /* Hacer visible */
+    transform: translateY(0); /* Mover hacia arriba */
+  }
+  
+  /* Estilo del texto dentro de cada bloque */
+  .item-scrolling-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }

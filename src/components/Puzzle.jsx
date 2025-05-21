@@ -18,6 +18,9 @@ const Puzzle = ({ datos }) => {
     }))
   );
 
+  // Estado para controlar qué descripción está visible
+  const [currentDescriptionId, setCurrentDescriptionId] = useState(null);
+
   const [currentPieceIndex, setCurrentPieceIndex] = useState(0);
 
   // Función para mostrar la siguiente pieza
@@ -42,6 +45,9 @@ const Puzzle = ({ datos }) => {
     updatedPieces[pieceIndex].position = 1;
     setPieces(updatedPieces);
 
+    // Actualizar la descripción visible
+    setCurrentDescriptionId(id +1);
+
     // Mostrar siguiente pieza
     showNextPiece();
   };
@@ -56,6 +62,7 @@ const Puzzle = ({ datos }) => {
       }))
     );
     setCurrentPieceIndex(0);
+    setCurrentDescriptionId(null); // Reiniciar descripción visible
   };
 
   return (
@@ -66,6 +73,7 @@ const Puzzle = ({ datos }) => {
       </button>
 
       <div id="main-wrapper">
+        {/* Rompecabezas */}
         <div id="puzzle">
           {pieces.map((piece) => (
             <Piece
@@ -79,7 +87,19 @@ const Puzzle = ({ datos }) => {
             />
           ))}
         </div>
+
+        
       </div>
+      {/* Contenedor de descripción actual */}
+      <div id="current-description-container" style={{position: 'fixed',
+    bottom: '230px',}}>
+          {currentDescriptionId !== null && (
+            <div className="description-box">
+              <h5>{pieces.find((piece) => piece.id === currentDescriptionId)?.titulo}</h5>
+              <p>{pieces.find((piece) => piece.id === currentDescriptionId)?.descripcion}</p>
+            </div>
+          )}
+        </div>
     </div>
   );
 };
@@ -104,8 +124,7 @@ const Piece = ({ id, visible, position, titulo, descripcion, onClick }) => {
       onClick={onClick}
     >
       <div className="content">
-        <h5>{titulo}</h5>
-        {/* <p>{descripcion}</p> */}
+        <span>{titulo}</span>
       </div>
     </div>
   );

@@ -1,19 +1,4 @@
-:root {
-    /* --color1: #324d81; */
-    --color1: #005b9b;
-    --color2: #005b51;
-    --color3: #01b3a4;
-    /* --color4: #773555; */
-    --color4: #47386d;
-}
-:root {
-    /* --color1: #324d81; */
-    --color1: #005a9ba8;
-    --color2: #005b50bb;
-    --color3: #01b3a4ab;
-    /* --color4: #773555; */
-    --color4: #47386dab;
-}
+
 .serviceBox{
     font-family: 'Poppins', sans-serif;
     text-align: center;

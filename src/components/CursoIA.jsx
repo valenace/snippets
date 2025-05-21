@@ -1,12 +1,13 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import datosCurso from "../../api/curso.json";
 import HeaderCourse from "./str/HeaderCourse";
-import BreadModules from "./BreadModules";
 
 // Objeto para mapear nombres de componentes a sus respectivas importaciones
 const componentesDisponibles = {
   // ComponenteA: lazy(() => import("../componentes/ComponenteA")),
-  // ComponenteB: lazy(() => import("../componentes/ComponenteB")),
+  // ComponenteB: lazy(() => import("../componentes/ComponenteB"))
+  SwipText: lazy(() => import("../components/SwipText")),
+  ShowScrollingText: lazy(() => import("../components/ShowScrollingText")),
   Puzzle: lazy(() => import("../components/Puzzle")),
   Boxes: lazy(() => import("../components/Boxes")),
   Timeline: lazy(() => import("../components/Timeline")),
@@ -86,7 +87,7 @@ const CursoIA = () => {
     <HeaderCourse courseTitle={datosCurso.nombre_curso} moduloId={moduloId} moduloTitulo={moduloTitulo} submoduloTitulo={submoduloTitulo} />
     
     <div style={styles.container}>
-
+    <h2 style={styles.slideTitle}>Submódulo: {submoduloTitulo}</h2>
       <div style={styles.contentContainer}>
         <Suspense fallback={<p>Cargando dinámicas...</p>}>
           {dinamicas.map((dinamica, idx) => {
@@ -94,7 +95,8 @@ const CursoIA = () => {
             return ComponenteDinamico ? (
                 <ComponenteDinamico key={idx} datos={dinamica.contenido || []} />
             ) : (
-              <p key={idx}>Componente "{dinamica.componente}" no encontrado.</p>
+              // <p key={idx}>Componente "{dinamica.componente}" no encontrado.</p>
+              <></>
             );
           })}
         </Suspense>
@@ -119,10 +121,10 @@ const CursoIA = () => {
         </div>
 
         <div style={styles.buttonContainer}>
-            <button onClick={anteriorSlide} disabled={indiceActual === 0} style={{ ...styles.button, backgroundColor: indiceActual === 0 ? "#ccc" : "#2196f3" }}>
+            <button onClick={anteriorSlide} disabled={indiceActual === 0} className="btn btn-color1 m-1" style={{ ...styles.button, backgroundColor: indiceActual === 0 ? "#ccc" : "var(--color1)" }}>
             Anterior
             </button>
-            <button onClick={siguienteSlide} disabled={indiceActual === todosLosSlides.length - 1} style={{ ...styles.button, backgroundColor: indiceActual === todosLosSlides.length - 1 ? "#ccc" : "#4caf50" }}>
+            <button onClick={siguienteSlide} disabled={indiceActual === todosLosSlides.length - 1} className="btn btn-color2 m-1" style={{ ...styles.button, backgroundColor: indiceActual === todosLosSlides.length - 1 ? "#ccc" : "var(--color2)" }}>
             Siguiente
             </button>
         </div>

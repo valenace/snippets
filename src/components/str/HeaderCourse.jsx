@@ -8,11 +8,6 @@ import BreadModules from "../BreadModules";
 
 const HeaderCourse = ({ courseTitle, moduloTitulo, moduloId }) => {
   return (
-    // <div className="HeaderCourse-container">
-    //   <img src="/static/img/mincyt-logo-white.png" alt="mincyt-logo" className="logo-img" />
-    //   <p className="logo-dg">Dirección General</p>
-    //   <h4 className="course-title">{courseTitle}</h4>
-    // </div>
     <div>
         <div className="d-flex flex-wrap m-auto align-content-center px-5" style={{backgroundColor: '#205781',height: '70px',     zIndex: '10',
       position: 'fixed',

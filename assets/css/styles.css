@@ -48,3 +48,45 @@ body{
       margin: 0.5rem 0;
     }
   }
+
+  /* :root {
+    --color1: #005b9b;
+    --color2: #005b51;
+    --color3: #01b3a4;
+    --color4: #47386d;
+} */
+:root {
+    --color1: #005a9ba8;
+    --color2: #005b50bb;
+    --color3: #01b3a4ab;
+    --color4: #47386dab;
+}
+
+.btn{
+    border-radius: 2rem;
+}
+
+
+.btn-color1{
+    color: #fff;
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+
+.btn-color2{
+    color: #fff;
+    background-color: var(--color2);
+    border-color: var(--color2);
+}
+
+.btn-color3{
+    color: #fff;
+    background-color: var(--color3);
+    border-color: var(--color3);
+}
+
+.btn-color4{
+    color: #fff;
+    background-color: var(--color4);
+    border-color: var(--color4);
+}

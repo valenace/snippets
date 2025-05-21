@@ -123,9 +123,9 @@ const Boxes = ({ datos }) => {
       JSON.stringify(userBox1) === JSON.stringify(correctBox1) &&
       JSON.stringify(userBox2) === JSON.stringify(correctBox2)
     ) {
-      setMessage("¡Correcto! 🎉");
+      setMessage("Correcto");
     } else {
-      setMessage("Inténtalo de nuevo 😊");
+      setMessage("Inténtalo de nuevo");
     }
   };
 

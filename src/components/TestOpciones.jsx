@@ -97,7 +97,7 @@ const TestOpciones = ({ datos }) => {
               <p><strong>Pregunta:</strong> {detalle.pregunta}</p>
               <p>Tu respuesta: <strong>{detalle.respuestaUsuario}</strong> -{' '}
                 <span className={detalle.esCorrecta ? "text-success" : "text-danger"}>
-                  {detalle.esCorrecta ? '✅ Correcta' : '❌ Incorrecta'}
+                  {detalle.esCorrecta ? 'Correcta' : 'Incorrecta'}
                 </span>
               </p>
               {!detalle.esCorrecta && (
