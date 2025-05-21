@@ -4,7 +4,10 @@
     padding: 2rem;
     text-align: center;
 } */
-
+body{
+  opacity: 1;
+  background-color: rgba(248,249,250)!important;
+}
 .modulos-slider {
     display: flex;
     flex-direction: column;

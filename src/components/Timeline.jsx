@@ -28,10 +28,10 @@ const Timeline = ({ datos }) => {
       <Carousel indicators={false} interval={null} controls={true}>
         {[...Array(Math.ceil(datos.length / 4))].map((_, i) => (
           <Carousel.Item key={i}>
-            <Row className="justify-content-center timeline-row" style={{ minHeight: '150px' }}>
+            <Row className="justify-content-evenly timeline-row" style={{ minHeight: '150px' }}>
               {datos.slice(i * 4, (i + 1) * 4).map((item) => (
                 <Col
-                  md={3}
+                  md={2}
                   key={item.id || item.fecha}
                   className="timeline-item"
                   onClick={() => handleShowModal(item)}

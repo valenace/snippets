@@ -1,5 +1,7 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import datosCurso from "../../api/curso.json";
+import HeaderCourse from "./str/HeaderCourse";
+import BreadModules from "./BreadModules";
 
 // Objeto para mapear nombres de componentes a sus respectivas importaciones
 const componentesDisponibles = {
@@ -27,6 +29,7 @@ const CursoIA = () => {
               submodulo.puntos.forEach((punto) => {
                 resultados.push({
                   moduloTitulo: modulo.titulo,
+                  moduloId: modulo.id - 1,
                   submoduloTitulo: submodulo.titulo,
                   puntoTitulo: punto.titulo,
                   dinamicas: punto.dinamicas || [],
@@ -76,18 +79,13 @@ const CursoIA = () => {
     return <div>Cargando contenido...</div>;
   }
 
-  const { moduloTitulo, submoduloTitulo, puntoTitulo, dinamicas } = todosLosSlides[indiceActual];
+  const { moduloTitulo, moduloId, submoduloTitulo, puntoTitulo, dinamicas } = todosLosSlides[indiceActual];
 
   return (
     <>
+    <HeaderCourse courseTitle={datosCurso.nombre_curso} moduloId={moduloId} moduloTitulo={moduloTitulo} submoduloTitulo={submoduloTitulo} />
+    
     <div style={styles.container}>
-      <h1 style={styles.title}>{datosCurso.nombre_curso}</h1>
-
-      <div style={styles.card}>
-        <h3 style={styles.moduleTitle}>Módulo: {moduloTitulo}</h3>
-        <h2 style={styles.slideTitle}>Submódulo: {submoduloTitulo}</h2>
-        {/* <h4 style={styles.puntoTitle}>Punto: {puntoTitulo}</h4> */}
-      </div>
 
       <div style={styles.contentContainer}>
         <Suspense fallback={<p>Cargando dinámicas...</p>}>
@@ -105,7 +103,7 @@ const CursoIA = () => {
       
     </div>
     
-    <div style={{padding:'0.5rem'}}>
+    <div style={{background:'white', padding:'0.5rem', position: 'fixed', bottom: '0', width: '100%', zIndex: '1'}}>
         <div style={styles.progressContainer}>
             <p style={styles.progressText}>
             Slide {indiceActual + 1} de {todosLosSlides.length}
@@ -137,11 +135,11 @@ const CursoIA = () => {
 // Estilos simples
 const styles = {
   container: {
-    padding: "2rem",
+    padding: "6rem 2rem 10rem 2rem",
     fontFamily: "Arial, sans-serif",
     width: "90vw",
     // height: "100vh",
-    margin: "auto",
+    margin: "auto"
   },
   title: {
     textAlign: "center",
@@ -153,6 +151,7 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
     marginBottom: "2rem",
+    marginTop:"3rem"
   },
   moduleTitle: {
     fontSize: "1rem",

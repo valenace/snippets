@@ -23,6 +23,8 @@ a:hover {
 }
 
 body {
+  opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
   margin: 0;
   /* display: flex;
   place-items: center;

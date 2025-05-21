@@ -131,13 +131,11 @@ const Boxes = ({ datos }) => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="container mt-5 p-4 bg-light text-dark rounded shadow">
+      <div className="container mt-5 p-4 text-dark">
         {/* Palabras disponibles */}
         <div className="text-center mb-4">
-          <h4 className="mb-3">Palabras Disponibles</h4>
           <div className="d-flex justify-content-center">
             <div className="">
-              <h5 className="title">Palabras</h5>
               <div className="d-flex flex-wrap justify-content-center gap-2 mt-4">
                 {words
                   .filter((w) => w.container === "available")
