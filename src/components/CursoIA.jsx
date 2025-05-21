@@ -6,6 +6,9 @@ const componentesDisponibles = {
   // ComponenteA: lazy(() => import("../componentes/ComponenteA")),
   // ComponenteB: lazy(() => import("../componentes/ComponenteB")),
   Puzzle: lazy(() => import("../components/Puzzle")),
+  Boxes: lazy(() => import("../components/Boxes")),
+  Timeline: lazy(() => import("../components/Timeline")),
+  TestOpciones: lazy(() => import("../components/TestOpciones")),
 };
 
 const CursoIA = () => {
@@ -76,22 +79,22 @@ const CursoIA = () => {
   const { moduloTitulo, submoduloTitulo, puntoTitulo, dinamicas } = todosLosSlides[indiceActual];
 
   return (
+    <>
     <div style={styles.container}>
       <h1 style={styles.title}>{datosCurso.nombre_curso}</h1>
 
       <div style={styles.card}>
         <h3 style={styles.moduleTitle}>Módulo: {moduloTitulo}</h3>
         <h2 style={styles.slideTitle}>Submódulo: {submoduloTitulo}</h2>
-        <h4 style={styles.puntoTitle}>Punto: {puntoTitulo}</h4>
+        {/* <h4 style={styles.puntoTitle}>Punto: {puntoTitulo}</h4> */}
       </div>
 
       <div style={styles.contentContainer}>
-        <h4 style={styles.sectionTitle}>Dinamicas:</h4>
         <Suspense fallback={<p>Cargando dinámicas...</p>}>
           {dinamicas.map((dinamica, idx) => {
             const ComponenteDinamico = componentesDisponibles[dinamica.componente];
             return ComponenteDinamico ? (
-              <ComponenteDinamico key={idx} datos={dinamica.contenido} />
+                <ComponenteDinamico key={idx} datos={dinamica.contenido || []} />
             ) : (
               <p key={idx}>Componente "{dinamica.componente}" no encontrado.</p>
             );
@@ -99,29 +102,35 @@ const CursoIA = () => {
         </Suspense>
       </div>
 
-      <div style={styles.progressContainer}>
-        <p style={styles.progressText}>
-          Slide {indiceActual + 1} de {todosLosSlides.length}
-        </p>
-        <div style={styles.progressBarBackground}>
-          <div
-            style={{
-              ...styles.progressBar,
-              width: `${porcentajeProgreso}%`,
-            }}
-          ></div>
-        </div>
-      </div>
-
-      <div style={styles.buttonContainer}>
-        <button onClick={anteriorSlide} disabled={indiceActual === 0} style={{ ...styles.button, backgroundColor: indiceActual === 0 ? "#ccc" : "#2196f3" }}>
-          Anterior
-        </button>
-        <button onClick={siguienteSlide} disabled={indiceActual === todosLosSlides.length - 1} style={{ ...styles.button, backgroundColor: indiceActual === todosLosSlides.length - 1 ? "#ccc" : "#4caf50" }}>
-          Siguiente
-        </button>
-      </div>
+      
     </div>
+    
+    <div style={{padding:'0.5rem'}}>
+        <div style={styles.progressContainer}>
+            <p style={styles.progressText}>
+            Slide {indiceActual + 1} de {todosLosSlides.length}
+            </p>
+            <div style={styles.progressBarBackground}>
+            <div
+                style={{
+                ...styles.progressBar,
+                width: `${porcentajeProgreso}%`,
+                }}
+            ></div>
+            </div>
+        </div>
+
+        <div style={styles.buttonContainer}>
+            <button onClick={anteriorSlide} disabled={indiceActual === 0} style={{ ...styles.button, backgroundColor: indiceActual === 0 ? "#ccc" : "#2196f3" }}>
+            Anterior
+            </button>
+            <button onClick={siguienteSlide} disabled={indiceActual === todosLosSlides.length - 1} style={{ ...styles.button, backgroundColor: indiceActual === todosLosSlides.length - 1 ? "#ccc" : "#4caf50" }}>
+            Siguiente
+            </button>
+        </div>
+    </div>
+      
+    </>
   );
 };
 
@@ -130,7 +139,8 @@ const styles = {
   container: {
     padding: "2rem",
     fontFamily: "Arial, sans-serif",
-    maxWidth: "800px",
+    width: "90vw",
+    // height: "100vh",
     margin: "auto",
   },
   title: {

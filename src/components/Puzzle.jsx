@@ -1,14 +1,22 @@
 import React, { useState } from "react";
+import '../../assets/css/puzzle.css';
 
-const Puzzle = () => {
-  const [pieces, setPieces] = useState([
-    { id: 1, visible: true, position: 0 },
-    { id: 2, visible: false, position: 0 },
-    { id: 3, visible: false, position: 0 },
-    { id: 4, visible: false, position: 0 },
-    { id: 5, visible: false, position: 0 },
-    { id: 6, visible: false, position: 0 },
-  ]);
+const Puzzle = ({ datos }) => {
+  // Validamos que lleguen datos y sean del formato esperado
+  if (!datos || !Array.isArray(datos) || datos.length === 0 || !datos[0]?.pieces) {
+    return <p>No hay datos disponibles para mostrar el rompecabezas.</p>;
+  }
+
+  const piecesData = datos[0].pieces;
+
+  // Estado inicial de las piezas
+  const [pieces, setPieces] = useState(
+    piecesData.map((piece, index) => ({
+      ...piece,
+      visible: index === 0,
+      position: 0,
+    }))
+  );
 
   const [currentPieceIndex, setCurrentPieceIndex] = useState(0);
 
@@ -22,23 +30,23 @@ const Puzzle = () => {
     }
   };
 
-  // Función para manejar el clic en una pieza
+  // Manejar clic en una pieza
   const handlePieceClick = (id) => {
     const pieceIndex = pieces.findIndex((piece) => piece.id === id);
     const updatedPieces = [...pieces];
 
-    // Si la pieza ya está colocada, no hacer nada
+    // Si ya está colocada, no hacer nada
     if (updatedPieces[pieceIndex].position === 1) return;
 
-    // Marcar la pieza como colocada
+    // Marcar como colocada
     updatedPieces[pieceIndex].position = 1;
     setPieces(updatedPieces);
 
-    // Mostrar la siguiente pieza
+    // Mostrar siguiente pieza
     showNextPiece();
   };
 
-  // Función para resetear el rompecabezas
+  // Resetear puzzle
   const resetPuzzle = () => {
     setPieces((prevPieces) =>
       prevPieces.map((piece, index) => ({
@@ -52,30 +60,32 @@ const Puzzle = () => {
 
   return (
     <div>
-        {/* Botón de Reset */}
-        <button id="reset-button" onClick={resetPuzzle}>
-            Reset
-        </button>
-        <div id="main-wrapper">
-            <div id="puzzle">
-                {pieces.map((piece) => (
-                <Piece
-                    key={piece.id}
-                    id={piece.id}
-                    visible={piece.visible}
-                    position={piece.position}
-                    onClick={() => handlePieceClick(piece.id)}
-                />
-                ))}
-            </div>            
-        </div>        
+      {/* Botón de Reset */}
+      <button id="reset-button" onClick={resetPuzzle}>
+        Reset
+      </button>
+
+      <div id="main-wrapper">
+        <div id="puzzle">
+          {pieces.map((piece) => (
+            <Piece
+              key={piece.id}
+              id={piece.id}
+              visible={piece.visible}
+              position={piece.position}
+              titulo={piece.titulo}
+              descripcion={piece.descripcion}
+              onClick={() => handlePieceClick(piece.id)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
-    
   );
 };
 
 // Componente Piece
-const Piece = ({ id, visible, position, onClick }) => {
+const Piece = ({ id, visible, position, titulo, descripcion, onClick }) => {
   const pieceStyles = {
     opacity: visible ? 1 : 0,
     pointerEvents: visible ? "auto" : "none",
@@ -94,7 +104,8 @@ const Piece = ({ id, visible, position, onClick }) => {
       onClick={onClick}
     >
       <div className="content">
-        <h5>Título {id}</h5>
+        <h5>{titulo}</h5>
+        {/* <p>{descripcion}</p> */}
       </div>
     </div>
   );

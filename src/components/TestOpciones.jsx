@@ -1,32 +1,22 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function TestOpciones() {
-  const [respuestas, setRespuestas] = useState(Array(5).fill(''));
+const TestOpciones = ({ datos }) => {
+  // Verificar si llegan bien los datos
+  if (!datos || !Array.isArray(datos) || datos.length === 0 || !datos[0]?.preguntasConRespuestas) {
+    return <p>No hay datos disponibles para mostrar este test.</p>;
+  }
+
+  const preguntasConRespuestas = datos[0].preguntasConRespuestas;
+
+  // Inicializamos las respuestas según la cantidad de preguntas
+  const [respuestas, setRespuestas] = useState(
+    Array(preguntasConRespuestas.length).fill('')
+  );
   const [resultados, setResultados] = useState(null);
-  const preguntasConRespuestas = [
-    {
-      pregunta: '¿Es cierto que el cielo es azul?',
-      respuestaCorrecta: 'Sí',
-    },
-    {
-      pregunta: '¿Es verdad que 2 + 2 = 5?',
-      respuestaCorrecta: 'No',
-    },
-    {
-      pregunta: '¿A veces te sientes indeciso/a?',
-      respuestaCorrecta: 'De cierta manera',
-    },
-    {
-      pregunta: '¿Es un hecho que los gatos siempre caen de pie?',
-    },
-    {
-      pregunta: '¿Estás completamente seguro/a de todo lo que crees?',
-    },
-  ];
 
-  const handleChange = (index, event) => {
+  const handleChange = (index, valor) => {
     const nuevasRespuestas = [...respuestas];
-    nuevasRespuestas[index] = event.target.value;
+    nuevasRespuestas[index] = valor;
     setRespuestas(nuevasRespuestas);
   };
 
@@ -56,7 +46,7 @@ function TestOpciones() {
   };
 
   const reiniciarTest = () => {
-    setRespuestas(Array(5).fill(''));
+    setRespuestas(Array(preguntasConRespuestas.length).fill(''));
     setResultados(null);
   };
 
@@ -65,68 +55,63 @@ function TestOpciones() {
       <h2>Test</h2>
       <form onSubmit={handleSubmit}>
         {preguntasConRespuestas.map((item, index) => (
-          <div key={index}>
-            <p>{item.pregunta}</p>
-            <label>
-              <input
-                type="radio"
-                name={`pregunta-${index}`}
-                value="Sí"
-                checked={respuestas[index] === 'Sí'}
-                onChange={(event) => handleChange(index, event)}
-              />
-              Sí
-            </label>
-            <label>
-              <input
-                type="radio"
-                name={`pregunta-${index}`}
-                value="No"
-                checked={respuestas[index] === 'No'}
-                onChange={(event) => handleChange(index, event)}
-              />
-              No
-            </label>
-            <label>
-              <input
-                type="radio"
-                name={`pregunta-${index}`}
-                value="De cierta manera"
-                checked={respuestas[index] === 'De cierta manera'}
-                onChange={(event) => handleChange(index, event)}
-              />
-              De cierta manera
-            </label>
+          <div key={index} className="mb-3">
+            <p><strong>{item.pregunta}</strong></p>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name={`pregunta-${index}`}
+                  value="1"
+                  checked={respuestas[index] === "1"}
+                  onChange={() => handleChange(index, "1")}
+                />
+                Sí
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name={`pregunta-${index}`}
+                  value="2"
+                  checked={respuestas[index] === "2"}
+                  onChange={() => handleChange(index, "2")}
+                />
+                No
+              </label>
+            </div>
           </div>
         ))}
-        <button type="submit">Enviar respuestas</button>
+        <button type="submit" className="btn btn-primary">Enviar respuestas</button>
       </form>
 
       {resultados && (
-        <div>
+        <div className="mt-4">
           <h3>Resultados:</h3>
-          <p>Obtuviste {resultados.correctas} de {resultados.total} respuestas correctas.</p>
+          <p>
+            Obtuviste <strong>{resultados.correctas}</strong> de <strong>{resultados.total}</strong> respuestas correctas.
+          </p>
           {resultados.detalles.map((detalle, index) => (
-            <div key={index}>
-              <p>
-                <strong>Pregunta:</strong> {detalle.pregunta}
-              </p>
-              <p>
-                Tu respuesta: {detalle.respuestaUsuario} -{' '}
-                <strong>{detalle.esCorrecta ? 'Correcta' : 'Incorrecta'}</strong>
+            <div key={index} className="mb-3 p-2 border rounded">
+              <p><strong>Pregunta:</strong> {detalle.pregunta}</p>
+              <p>Tu respuesta: <strong>{detalle.respuestaUsuario}</strong> -{' '}
+                <span className={detalle.esCorrecta ? "text-success" : "text-danger"}>
+                  {detalle.esCorrecta ? '✅ Correcta' : '❌ Incorrecta'}
+                </span>
               </p>
               {!detalle.esCorrecta && (
-                <p>
-                  Respuesta correcta: {detalle.respuestaCorrecta}
+                <p className="text-muted">
+                  Respuesta correcta: <strong>{detalle.respuestaCorrecta}</strong>
                 </p>
               )}
             </div>
           ))}
-          <button onClick={reiniciarTest}>Reiniciar Test</button>
+          <button onClick={reiniciarTest} className="btn btn-secondary">Reiniciar Test</button>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default TestOpciones;

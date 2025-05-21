@@ -1,0 +1,235 @@
+:root {
+  --piecesize: 100px; /* Tamaño de cada pieza */
+  --piecetipsize: 15px; /* Tamaño de las pestañas */
+  --pieceradius: 5px; /* Radio de bordes redondeados */
+  --bg: #ecf0f9;
+}
+#main-wrapper {
+  display: flex
+;
+    justify-content: center;
+    height: 100%;
+}
+#main-wrapper:before {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: red;
+  top: 50%;
+  left: 0;
+}
+#puzzle {
+  width: 240px; /* Ajustado para 3 columnas */
+  height: 160px; /* Ajustado para 2 filas */
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.piece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: var(--piecesize);
+  height: var(--piecesize);
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0; /* Oculta todas las piezas inicialmente */
+  pointer-events: none; /* Desactiva interacción con piezas no visibles */
+}
+.piece[data-visible="true"] {
+  opacity: 1; /* Muestra piezas con data-visible="true" */
+  pointer-events: auto; /* Activa interacción */
+}
+.piece[data-position="0"] {
+  transform: translateX(var(--initial-x)) translateY(var(--initial-y)) rotate(var(--initial-rotate));
+}
+.piece[data-position="1"] {
+  transform: translateX(var(--final-x)) translateY(var(--final-y)) rotate(0deg);
+}
+
+/* Definición de las piezas */
+.piece1 {
+  background: #61D2D6;
+  border-radius: var(--pieceradius) 0 0 0;
+  z-index: 5;
+  --initial-x: 40px;
+  --initial-y: 240px; /* Posición inicial arriba */
+  --initial-rotate: 0deg;
+  --final-x: 0px;
+  --final-y: 0px;
+}
+.piece2 {
+  background: #ED146F;
+  --initial-x: 40px;
+  --initial-y: 240px; /* Posición inicial arriba */
+  --initial-rotate: 0deg;
+  --final-x: 100px;
+  --final-y: 0px;
+}
+.piece3 {
+  background: #EDE5E2;
+  border-radius: 0 0 0 var(--pieceradius);
+  z-index: 4;
+  --initial-x: 40px;
+  --initial-y: 240px; /* Posición inicial arriba */
+  --initial-rotate: 0deg;
+  --final-x: 0px;
+  --final-y: 100px;
+}
+.piece4 {
+  background: #EDDE45;
+  --initial-x: 40px;
+  --initial-y: 240px; /* Posición inicial arriba */
+  --initial-rotate: 0deg;
+  --final-x: 100px;
+  --final-y: 100px;
+}
+.piece5 {
+  background: #FFA726;
+  border-radius: 0 var(--pieceradius) 0 0;
+  z-index: 6; /* Aseguramos que esta pieza esté encima de la pieza 6 */
+  --initial-x: 40px;
+  --initial-y: 240px;
+  --initial-rotate: 0deg;
+  --final-x: 200px;
+  --final-y: 0px;
+}
+.piece6 {
+  background: #66BB6A;
+  border-radius: 0 0 var(--pieceradius) 0;
+  z-index: 5; /* Mantener esta pieza debajo de la pieza 5 */
+  --initial-x: 40px;
+  --initial-y: 240px;
+  --initial-rotate: 0deg;
+  --final-x: 200px;
+  --final-y: 100px;
+}
+
+/* Estilos para los conectores (tips) */
+.piece1:after,
+.piece1:before,
+.piece2:after,
+.piece2:before,
+.piece3:after,
+.piece3:before,
+.piece4:after,
+.piece4:before,
+.piece5:after,
+.piece5:before,
+.piece6:after,
+.piece6:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: var(--piecetipsize);
+  height: var(--piecetipsize);
+  border-radius: 50%;
+}
+
+/* Pieza 1 */
+.piece1:after {
+  top: calc(50% - var(--piecetipsize) / 2);
+  right: calc(-1 * var(--piecetipsize) / 1.3);
+  background: inherit;
+  z-index: 1;
+}
+.piece1:before {
+  bottom: calc(-1 * var(--piecetipsize) / 1.3);
+  right: calc(50% - var(--piecetipsize) / 2);
+  background: inherit;
+  z-index: 1;
+}
+
+/* Pieza 2 */
+.piece2:after {
+  top: calc(50% - var(--piecetipsize) / 2);
+  left: -5px;
+  background: transparent;
+}
+.piece2:before {
+  bottom: -4px;
+  right: calc(50% - var(--piecetipsize) / 2);
+  background: transparent;
+  z-index: 1;
+}
+
+/* Pieza 3 */
+.piece3:before {
+  top: -5px;
+  right: calc(50% - var(--piecetipsize) / 2);
+  background: transparent;
+  z-index: 1;
+}
+.piece3:after {
+  top: calc(50% - var(--piecetipsize) / 2);
+  right: calc(-1 * var(--piecetipsize) / 1.3);
+  background: inherit;
+  z-index: 1;
+}
+
+/* Pieza 4 */
+.piece4:after {
+  top: calc(50% - var(--piecetipsize) / 2); /* Conexión horizontal hacia la pieza 6 */
+  right: calc(-1 * var(--piecetipsize) / 1.3);
+  background: transparent;
+  z-index: 5; /* Mantener correcta superposición */
+}
+.piece4:before {
+  top: calc(-1 * var(--piecetipsize) / 1.3);
+  right: calc(50% - var(--piecetipsize) / 2);
+  background: inherit;
+  z-index: 1;
+}
+
+/* Pieza 5 */
+.piece5:after {
+  top: calc(50% - var(--piecetipsize) / 2); /* Conexión horizontal hacia la pieza 4 */
+  left: calc(-1 * var(--piecetipsize) / 2); /* Ajuste para alineación perfecta */
+  background: inherit;
+  z-index: 6; /* Aseguramos que la pieza esté correctamente encima */
+}
+.piece5:before {
+  bottom: calc(-1 * var(--piecetipsize) / 1.3);
+  right: calc(50% - var(--piecetipsize) / 2);
+  background: inherit;
+  z-index: 1;
+}
+
+/* Pieza 6 */
+.piece6:after {
+  top: calc(50% - var(--piecetipsize) / 2); /* Conexión horizontal hacia la pieza 4 */
+  left: calc(-1 * var(--piecetipsize) / 2); /* Ajuste para alineación perfecta */
+  background: inherit;
+  z-index: 6; /* Aseguramos que la pieza esté correctamente encima */
+}
+.piece6:before {
+  top: calc(-1 * var(--piecetipsize) / 1.3); /* Conexión vertical hacia la pieza 4 */
+  left: calc(50% - var(--piecetipsize) / 2);
+  background: transparent; /* Ajuste de color para alineación correcta */
+  z-index: 5; /* Mantener coherencia visual */
+}
+
+/* Eliminar la pestaña derecha de la pieza 5 */
+.piece5:after {
+  display: none; /* Ocultar la pestaña derecha */
+}
+
+/* Estilo del botón Reset */
+#reset-button {
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#reset-button:hover {
+  background-color: #0056b3;
+}
+.con-saltos-de-linea {
+  white-space: pre-wrap;
+}
