@@ -1,107 +1,115 @@
 {
-  "nombre_curso": "...",
+  "nombre_curso": "",
   "modulos": [
     {
       "id": 1,
-      "titulo": "...",
-      "contenido": "...",
-      "submodulos": "..."
+      "titulo": "",
+      "contenido": "",
+      "submodulos": ""
     },      
     {
       "id": 2,
-      "titulo": "...",
+      "titulo": "",
       "contenido":"",
       "submodulos": [
         {
-          "id": "...",
-          "titulo": "...",
+          "id": "",
+          "titulo": "",
           "puntos": [
             {
-              "id": "...",
-              "titulo": "...",
-              "contenido": "...",
+              "id": "",
+              "titulo": "",
+              "contenido": "",
               "dinamicas": [
                 {                    
-                  "componente": "...",
-                  "contenido": "...."
+                  "componente": "",
+                  "contenido": "."
                 },
                 {                    
-                  "componente": "...",
+                  "componente": "",
+                  "contenido": "s"
+                },
+                {                    
+                  "componente": "",
                   "contenido": [
                     "”La IA es la capacidad de las máquinas para usar algoritmos, aprender de los datos y utilizar lo aprendido en la toma de decisiones tal y como lo haría un ser humano.” \n Lasse Rouhiainen.",
                     "“La IA es una rama de las ciencias computacionales encargada de estudiar modelos de cómputo capaces de realizar actividades propias de los seres humanos en base a dos de sus características primordiales: el razonamiento y la conducta” \n Bruno López Takeyas.",
                     "“El estudio y desarrollo de sistemas informáticos que pueden copiar el comportamiento humano inteligente” \nDiccionario de Oxford",
                     "“Un sistema de IA es un sistema digital que procesa y analiza información en su entorno para actuar sobre él - con cierto grado de autonomía- con el fin de alcanzar objetivos específicos” \nUNESCO"
                   ]                    
-                },
-                {                    
-                  "componente": "...",
-                  "contenido": "...."
-                }
+                }                
               ]
             }
           ]
         },
         {
-          "id": "...",
-          "titulo": "...",
-          "contenido": "...",
+          "id": "",
+          "titulo": "",
+          "contenido": "",
           "puntos": [
             {
-              "id": "...",
-              "titulo": "...",
-              "contenido": "...",  
+              "id": "",
+              "titulo": "",
+              "contenido": "",  
               "dinamicas": [
                 {
-                  "componente": "...",
+                  "componente": "",
                   "contenido": [
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 1,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 2,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 3,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 4,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 5,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...7"
+                      "id": 6,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "7"
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 7,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     },
                     {
-                      "titulo": "...",
-                      "fecha": "...",
-                      "descripcionCorta": "...",
-                      "descripcionLarga": "...."
+                      "id": 8,
+                      "titulo": "",
+                      "fecha": "",
+                      "descripcionCorta": "",
+                      "descripcionLarga": "."
                     }
                   ]
                 }                  
@@ -110,84 +118,84 @@
           ]
         },
         {
-          "id": "...",
-          "titulo": "...",
-          "contenido": "...",
+          "id": "",
+          "titulo": "",
+          "contenido": "",
           "puntos": [
             {
-              "id": "...",
-              "titulo": "...",
-              "contenido": "...",
+              "id": "",
+              "titulo": "",
+              "contenido": "",  
               "dinamicas": [
                 {
-                  "componente": "...",
+                  "componente": "",
                   "contenido": [
                     {
-                      "titulo": "...",
-                      "descipcion": "...."
+                      "titulo": "",
+                      "descipcion": "."
                     },
                     {
-                      "titulo": "...",
-                      "descipcion": "...."
+                      "titulo": "",
+                      "descipcion": "."
                     },
                     {
-                      "titulo": "...",
-                      "descipcion": "...."
+                      "titulo": "",
+                      "descipcion": "."
                     }
                   ]
                 },
                 {
-                  "componente": "...",
+                  "componente": "",
                   "contenido":  [
                     {
                       "initialWords": [
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
                           "id": 5,
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         },
                         {
-                          "id": "...",
-                          "text": "...",
-                          "color": "...",
-                          "container": "...e"
+                          "id": "",
+                          "text": "",
+                          "color": "",
+                          "container": "e"
                         }
                       ]
                     },
@@ -206,50 +214,50 @@
           ]
         },
         {
-          "id": "...",
-          "titulo": "...",
-          "contenido": "...",
+          "id": "",
+          "titulo": "",
+          "contenido": "",
           "puntos": [
             {
-              "id": "...",
-              "titulo": "...",
-              "contenido": "...",
+              "id": "",
+              "titulo": "",
+              "contenido": "",  
               "dinamicas": [
                 {
-                  "componente": "...",
+                  "componente": "",
                   "contenido": [
                     {
                       "pieces":
                       [
                         {
                           "id": 1,
-                          "titulo": "...",
-                          "descripcion": "...s"
+                          "titulo": "",
+                          "descripcion": "s"
                         },
                         {
                           "id": 2,
-                          "titulo": "...",
-                          "descripcion": "...."
+                          "titulo": "",
+                          "descripcion": "."
                         },
                         {
                           "id": 3,
-                          "titulo": "...",
-                          "descripcion": "...."
+                          "titulo": "",
+                          "descripcion": "."
                         },
                         {
                           "id": 4,
-                          "titulo": "...",
-                          "descripcion": "...E"
+                          "titulo": "",
+                          "descripcion": "E"
                         },
                         {
                           "id": 5,
-                          "titulo": "...",
-                          "descripcion": "...."
+                          "titulo": "",
+                          "descripcion": "."
                         },
                         {
                           "id": 6,
-                          "titulo": "...",
-                          "descripcion": "...."
+                          "titulo": "",
+                          "descripcion": "."
                         }
                       ]
                     }
@@ -262,56 +270,56 @@
           ]
         },
         {
-          "id": "...",
-          "titulo": "...",
-          "contenido": "...."
+          "id": "",
+          "titulo": "",
+          "contenido": "."
         },
         {
-          "id": "...",
-          "titulo": "...",
-          "contenido": "...",
+          "id": "",
+          "titulo": "",
+          "contenido": "",
           "puntos": [
             {
-              "id": "...",
-              "titulo": "...",
-              "contenido": "...",
+              "id": "",
+              "titulo": "",
+              "contenido": "",  
               "dinamicas": [
                 {
-                  "componente": "...",
+                  "componente": "",
                   "contenido": [
                     {
                       "preguntasConRespuestas":[
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...1"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...2"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...1"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...2"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...2"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...2"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...1"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         },
                         {
-                          "pregunta": "...",
-                          "respuestaCorrecta": "...2"
+                          "pregunta": "",
+                          "respuestaCorrecta": ""
                         }
                       ]
                     }

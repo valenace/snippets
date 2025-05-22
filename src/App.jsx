@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<CourseLayout><CourseContentPage /></CourseLayout>} />
+        <Route path="/" element={<CourseLayout />} />
         <Route path="/cursos" element={<CursoIA />} />
       </Routes>
     </BrowserRouter>

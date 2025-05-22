@@ -296,3 +296,287 @@
       display: none; /* Ocultar overlay en escritorio */
     }
   }
+/* ... (todo el CSS existente) ... */
+
+/* Estilos de layout y mobile */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mobile-header {
+  display: none; /* Oculto por defecto en desktop */
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1001; /* Mayor que el headerCourse */
+}
+
+.mobile-header .course-title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.mobile-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.sidebar-wrapper {
+  width: 250px; /* Ancho del sidebar */
+  flex-shrink: 0;
+  background-color: #f2f2f2;
+  border-right: 1px solid #e0e0e0;
+  padding-top: 5rem; /* Espacio para el HeaderCourse fijo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  margin-left: 250px; /* Offset para el sidebar fijo */
+  padding-top: 6rem; /* Espacio para el HeaderCourse fijo */
+  box-sizing: border-box;
+}
+
+/* Estilos del Sidebar */
+.sidebar {
+  padding: 1rem;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-item, .submodule-item, .theme-item {
+  margin-bottom: 0.5rem;
+}
+
+.module-header, .submodule-header, .theme-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  color: white;
+}
+
+.module-header:hover, .submodule-header:hover, .theme-item:hover {
+  background-color: #e0e0e0;
+}
+
+.module-header .icon, .submodule-header .icon {
+  margin-right: 0.5rem;
+}
+
+.submodule-content, .module-content {
+  margin-left: 1rem; /* Indentación para submódulos/temas */
+  list-style: none;
+  padding: 0;
+}
+
+/* Estilos para el elemento activo en el sidebar */
+.theme-item.is-active,
+.submodule-header.is-active,
+.module-header.is-active {
+  background-color: #cceeff; /* Un azul claro para resaltar */
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Estilos del contenido principal (para CourseContentPage) */
+.content-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto; /* Centrar el contenido */
+}
+
+/* Nuevos estilos para la carga y error */
+.loading-container, .error-container, .no-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  color: #4a5568;
+  background-color: #f7fafc;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.error-container {
+  color: #e53e3e;
+}
+
+/* Estilos para los elementos de dinámica en CourseContentPage (antes SlidePresenter) */
+.dinamica-section {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.text-dinamica {
+  font-style: italic;
+  color: #4a5568;
+}
+
+.quote-dinamica {
+  border-left: 4px solid #2c5282;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #2d3748;
+}
+
+.list-dinamica {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #4a5568;
+}
+.list-dinamica li {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-dinamica {
+  border-left: 2px solid #a0aec0;
+  padding-left: 1rem;
+}
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0.5rem;
+  width: 16px;
+  height: 16px;
+  background-color: #2c5282;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+.timeline-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #2d3748;
+}
+.timeline-item p {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.definitions-dinamica h4 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+.definitions-dinamica p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.accordion-dinamica details {
+  background-color: #ebf8ff;
+  border: 1px solid #bee3f8;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+.accordion-dinamica summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2c5282;
+}
+.accordion-dinamica details p {
+  padding: 0.5rem 1rem 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.placeholder-dinamica {
+  font-style: italic;
+  color: #718096;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    width: 100%;
+    transform: translateX(-100%);
+    padding-top: 4rem; 
+  }
+
+  .sidebar-wrapper.is-open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 4rem;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+  }
+
+  .sidebar-overlay.is-visible {
+    display: block;
+  }
+}
+
+/* Variables de color de ejemplo, si las usas */
+:root {
+    --color1: #007bff; /* Azul */
+    --color2: #28a745; /* Verde */
+}
