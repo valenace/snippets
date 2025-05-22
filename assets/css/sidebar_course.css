@@ -1,0 +1,298 @@
+/* src/App.css */
+
+/* Variables CSS para colores y tamaños */
+:root {
+    --sidebar-width-desktop: 280px;
+    --header-height-mobile: 60px;
+    --sidebar-bg: #2d3748; /* gray-800 */
+    --sidebar-text: #e2e8f0; /* gray-200 */
+    --module-bg: #4a5568; /* gray-700 */
+    --module-hover-bg: #2b313e; /* gray-600 */
+    --submodule-text: #cbd5e0; /* gray-300 */
+    --submodule-hover-bg: #4a5568; /* gray-700 */
+    --theme-text: #cbd5e0; /* gray-300 */
+    --theme-hover-bg: #2a69ac; /* blue-600 */
+    --theme-active-bg: #2c5282; /* blue-700 */
+    --border-color: #4a5568; /* gray-700 */
+    --overlay-bg: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilos globales */
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor principal */
+  .app-container {
+    display: flex;
+    flex-direction: column; /* Por defecto en móvil, columna */
+    min-height: 100vh;
+  }
+  
+  /* Encabezado móvil */
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #1a202c; /* gray-900 */
+    color: white;
+    height: var(--header-height-mobile);
+    position: sticky;
+    top: 0;
+    z-index: 50; /* Para que esté por encima del sidebar al abrir */
+  }
+  
+  .mobile-header button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.5rem; /* Icon size */
+    display: flex; /* Para centrar icono */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-header button:focus {
+    outline: 2px solid var(--theme-hover-bg);
+    border-radius: 4px;
+  }
+  
+  /* Estilos del Sidebar */
+  .sidebar {
+    width: var(--sidebar-width-desktop);
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    min-height: 100vh;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 40; /* Para que esté por encima del contenido principal */
+  
+    /* Por defecto en móvil, oculto */
+    position: fixed;
+    top: var(--header-height-mobile); /* Debajo del header móvil */
+    left: 0;
+    height: calc(100vh - var(--header-height-mobile)); /* Ajustar altura para móvil */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Para permitir scroll si el contenido es largo */
+  }
+  
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-title {
+    font-size: 1.75rem; /* 2xl */
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* mb-6 */
+    padding-bottom: 1rem; /* pb-4 */
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilos de ModuleItem */
+  .module-item {
+    margin-bottom: 1rem; /* mb-2 */
+  }
+  
+  .module-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem; /* p-3 */
+    cursor: pointer;
+    background-color: var(--module-bg);
+    color: white;
+    font-size: 1.125rem; /* lg */
+    font-weight: 600; /* semibold */
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .module-header:hover {
+    background-color: var(--module-hover-bg);
+  }
+  
+  .module-header .icon {
+    margin-right: 0.5rem; /* mr-2 */
+    display: flex; /* Para centrar icono */
+    align-items: center;
+  }
+  
+  .module-content {
+    padding-left: 1rem; /* pl-4 */
+    margin-top: 0.25rem; /* mt-1 */
+  }
+  
+  /* Estilos de SubmoduleItem */
+  .submodule-item {
+    margin-bottom: 0.25rem; /* mb-1 */
+  }
+  
+  .submodule-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem; /* p-2 */
+    cursor: pointer;
+    color: var(--submodule-text);
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .submodule-header:hover {
+    background-color: var(--submodule-hover-bg);
+    color: white;
+  }
+  
+  .submodule-header .icon {
+    margin-right: 0.5rem; /* mr-2 */
+    display: flex;
+    align-items: center;
+  }
+  
+  .submodule-content {
+    padding-left: 1.5rem; /* pl-6 */
+    border-left: 1px solid var(--border-color);
+  }
+  
+  /* Estilos de ThemeItem */
+  .theme-item {
+    padding: 0.25rem 1rem; /* py-1 px-4 */
+    cursor: pointer;
+    color: var(--theme-text);
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .theme-item:hover {
+    background-color: var(--theme-hover-bg);
+    color: white;
+  }
+  
+  .theme-item.is-active {
+    background-color: var(--theme-active-bg);
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Estilos para el tema activo en el sidebar */
+  .active-theme-display {
+    margin-top: 2rem; /* mt-8 */
+    padding: 1rem; /* p-4 */
+    background-color: var(--module-bg);
+    border-radius: 0.5rem; /* rounded-md */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .active-theme-display h3 {
+    font-size: 1.25rem; /* xl */
+    font-weight: 600; /* semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }
+  
+  .active-theme-display p {
+    font-size: 1.125rem; /* lg */
+    color: var(--sidebar-text);
+  }
+  
+  
+  /* Overlay para móvil */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--overlay-bg);
+    z-index: 30;
+    display: none; /* Oculto por defecto */
+  }
+  
+  .sidebar-overlay.is-visible {
+    display: block;
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 2rem; /* p-8 */
+    background-color: #f7fafc; /* gray-50 */
+    overflow-y: auto; /* Para que el contenido principal también pueda hacer scroll */
+  }
+  
+  .main-content h1 {
+    font-size: 2.25rem; /* 3xl */
+    font-weight: bold;
+    margin-bottom: 1rem; /* mb-4 */
+    color: #2d3748; /* gray-800 */
+  }
+  
+  .main-content p {
+    color: #4a5568; /* gray-700 */
+  }
+  
+  .content-card {
+    margin-top: 2rem; /* mt-8 */
+    padding: 1.5rem; /* p-6 */
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  }
+  
+  .content-card h2 {
+    font-size: 1.5rem; /* 2xl */
+    font-weight: 600; /* semibold */
+    margin-bottom: 0.75rem; /* mb-3 */
+    color: #2d3748; /* gray-800 */
+  }
+  
+  .content-card p {
+    color: #4a5568; /* gray-600 */
+  }
+  
+  .content-card p.italic {
+    font-style: italic;
+  }
+  
+  
+  /* Media query para escritorio */
+  @media (min-width: 768px) { /* md breakpoint de Tailwind */
+    .app-container {
+      flex-direction: row; /* En escritorio, sidebar al lado del contenido */
+    }
+  
+    .mobile-header {
+      display: none; /* Ocultar header móvil en escritorio */
+    }
+  
+    .sidebar {
+      position: relative; /* Vuelve a ser parte del flujo normal */
+      transform: translateX(0); /* Siempre visible */
+      height: 100vh; /* Ocupa toda la altura */
+      top: 0;
+      flex-shrink: 0; /* Evita que el sidebar se encoja */
+    }
+  
+    .main-content {
+      flex: 1; /* Ocupa el espacio restante */
+    }
+  
+    .sidebar-overlay {
+      display: none; /* Ocultar overlay en escritorio */
+    }
+  }

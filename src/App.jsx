@@ -18,12 +18,15 @@ import Home from './pages/Home'
 import CoursePage from './pages/CoursePage'
 import CursoIA from './components/CursoIA'
 import Timeline from './components/Timeline';
+import CourseLayout from './components/layouts/CourseLayout';
+import CourseContentPage from './components/pages/CourseContentPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<CourseLayout><CourseContentPage /></CourseLayout>} />
         <Route path="/cursos" element={<CursoIA />} />
       </Routes>
     </BrowserRouter>
