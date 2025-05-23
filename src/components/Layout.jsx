@@ -1,16 +1,8 @@
-// src/components/Layout.jsx
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import SidebarC2 from './str/SidebarC2'
 
 const Layout = ({ children }) => {
   return (
-    <div className="wrapper">
-      <div className="section">
-        <Navbar />
-        {/* <Sidebar /> */}
-        <main>{children}</main>
-      </div>
-    </div>
+      <SidebarC2 />
   )
 }
 

@@ -20,13 +20,16 @@ import CursoIA from './components/CursoIA'
 import Timeline from './components/Timeline';
 import CourseLayout from './components/layouts/CourseLayout';
 import CourseContentPage from './components/pages/CourseContentPage';
+import SidebarC2 from './components/str/SidebarC2';
+import HomePage from './components/pages/HomePage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<CourseLayout />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sidebar" element={<SidebarC2 />} />
         <Route path="/cursos" element={<CursoIA />} />
       </Routes>
     </BrowserRouter>

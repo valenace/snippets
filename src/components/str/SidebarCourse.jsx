@@ -1,6 +1,7 @@
 // src/components/SidebarCourse.jsx
 import React, { useState, useEffect } from 'react';
 import { MdChevronRight, MdExpandMore } from 'react-icons/md';
+import "../../../assets/css/sidebar_course.css"
 
 // Función auxiliar para verificar si un elemento es el activo
 const isActiveItem = (item, activePoint) => {
